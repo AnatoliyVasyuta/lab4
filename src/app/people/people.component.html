@@ -1,0 +1,16 @@
+<div>
+    <label for="facultyName">назва факультету:</label>
+    <input type="text" id="facultyName" [(ngModel)]="facultyNameFilter" name="facultyName">
+    <button (click)="applyFilter()">знайти</button>
+  </div>
+  
+  <div *ngFor="let faculty of faculties">
+    <p [ngStyle]="{'background-color': faculty.facultyName === facultyNameFilter ? 'yellow' : 'none'}">
+      <strong>Faculty Name:</strong> {{ faculty.facultyName }}
+      <br>
+      <strong>Dean's Name:</strong> {{ faculty.deanFullName }}
+    </p>
+    <p><strong>Phone:</strong> {{ faculty.phone }}</p>
+    <p><strong>Address:</strong> {{ faculty.address }}</p>
+  </div>
+  
